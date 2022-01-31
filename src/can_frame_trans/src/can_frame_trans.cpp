@@ -82,11 +82,11 @@ VOID CanFrameTrans::GetFrameSt(CanFrameSt &canFrameSt, string &str)
 
 VOID CanFrameTrans::PrintCanFrameSt(CanFrameSt camFrameSt)
 {
-    printf ("protType = 0x%lx\n", camFrameSt.protType);
-    printf ("Qr_Flag  = 0x%lx\n", camFrameSt.Qr_Flag);
-    printf ("dstAddr  = 0x%lx\n", camFrameSt.dstAddr);
-    printf ("srcAddr  = 0x%lx\n", camFrameSt.srcAddr);
-    printf ("CmdCode  = 0x%lx\n", camFrameSt.CmdCode);
+    printf ("protType = 0x%x\n", camFrameSt.protType);
+    printf ("Qr_Flag  = 0x%x\n", camFrameSt.Qr_Flag);
+    printf ("dstAddr  = 0x%x\n", camFrameSt.dstAddr);
+    printf ("srcAddr  = 0x%x\n", camFrameSt.srcAddr);
+    printf ("CmdCode  = 0x%x\n", camFrameSt.CmdCode);
 }
 
 UINT32 CanFrameTrans::String2U32(string &str, DataRange range)

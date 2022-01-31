@@ -22,6 +22,9 @@
                 "cwd": "${workspaceFolder}/Platform/build/"
             },
             "command": "./cmake_cfg_build.sh",
+            "args": [
+                "CanFrame"
+            ],
             "detail": "使用cmake命令创建makefile,并生成可执行文件",
             "problemMatcher": [
                 "$gcc"
