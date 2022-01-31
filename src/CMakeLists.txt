@@ -1,0 +1,7 @@
+if (${TARGET_NAME} STREQUAL "CanFrame")
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/can_frame_trans)
+elseif (${TARGET_NAME} STREQUAL "FileListTrans")
+    add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/file_list_trans)
+else ()
+    target_sources(${TARGET_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp)
+endif()

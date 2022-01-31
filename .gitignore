@@ -1,0 +1,7 @@
+output/*
+buildcache/*
+bin/*
+build/
+script/public_config.sh
+.vscode/settings.json
+Platform/*
