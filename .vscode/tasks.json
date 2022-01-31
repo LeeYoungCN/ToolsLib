@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "type": "shell",
     "options": {
-        "cwd": "${workspaceFolder}/Platform/build/"
+        "cwd": "${workspaceFolder}"
     },
     "tasks": [
         {
@@ -22,9 +22,6 @@
                 "cwd": "${workspaceFolder}/Platform/build/"
             },
             "command": "./cmake_cfg_build.sh",
-            "args": [
-                "FileListTrans"
-            ],
             "detail": "使用cmake命令创建makefile,并生成可执行文件",
             "problemMatcher": [
                 "$gcc"
@@ -60,10 +57,23 @@
             },
             "command": "./init_env.sh",
             "args": ["${workspaceFolder}"],
-            "detail": "运行程序",
+            "detail": "初始化开发环境",
             "problemMatcher": [
                 "$gcc"
             ],
         },
+        {
+            "label": "Download Platform",
+            "options": {
+                "cwd": "${workspaceFolder}/Platform/template/"
+            },
+            "command": "./download_Platform.sh",
+            "args": [],
+            "detail": "下载依赖",
+            "problemMatcher": [
+                "$gcc"
+            ],
+        },
+        
     ]
 }
