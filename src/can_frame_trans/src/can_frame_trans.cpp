@@ -122,7 +122,7 @@ VOID CanFrameTrans::GetSendBinStr()
         sendBinStr[FRAME_ST.dstAddrRange.start + i] = recvBinStr[FRAME_ST.srcAddrRange.start + i];
         sendBinStr[FRAME_ST.srcAddrRange.start + i] = recvBinStr[FRAME_ST.dstAddrRange.start + i];
     }
-    sendBinStr[FRAME_ST.QR_FlagRange.start] = '0';
+    sendBinStr[FRAME_ST.QR_FlagRange.start] = 1 + 2 * '0' - recvBinStr[FRAME_ST.QR_FlagRange.start];
 }
 
 VOID CanFrameTrans::PrintCanFrame(string str)
