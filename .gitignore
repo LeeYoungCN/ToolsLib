@@ -2,6 +2,9 @@ output/*
 buildcache/*
 bin/*
 build/
-script/public_config.sh
+
 .vscode/settings.json
+.vscode/launch.json
+.vscode/c_cpp_properties.json
+
 Platform/*

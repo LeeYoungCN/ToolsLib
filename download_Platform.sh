@@ -2,23 +2,17 @@
 function copy_tmplate_file()
 {
     file_name="${1}"
-    file_name=${file_name#${template_path}\/}
     if [ ! -e ${root}/${file_name} ];then
-        cp -rf ${template_path}/${file_name} ${root}/${file_name}
+        cp -rf ${template_path}${file_name} ${root}${file_name}
     fi
 }
 
 function copy_all_file()
 {
-    for f in $(ls -a $1); do
-        if [ ${f} == "." -o ${f} == ".." ]; then
-            continue
-        fi
-        if [ -d ${f} ]; then
-            copy_all_file "${1}/${f}"
-        else
-            copy_tmplate_file "${1}/${f}"
-        fi
+    folder=${1}
+    for file in $(find ${folder} -type f); do
+        file_name=${file##${folder}}
+        copy_tmplate_file "${file_name}"
     done
 }
 
