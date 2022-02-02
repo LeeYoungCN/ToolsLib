@@ -19,9 +19,9 @@
         {
             "label": "Config & Build",
             "options": {
-                "cwd": "${workspaceFolder}/Platform/build/"
+                "cwd": "${workspaceFolder}/build/"
             },
-            "command": "./cmake_cfg_build.sh",
+            "command": "./build.sh",
             "args": [
                 "FileListTrans"
             ],
