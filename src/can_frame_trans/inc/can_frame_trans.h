@@ -1,7 +1,7 @@
 #ifndef CAN_FRAME_TRANS_H
 #define CAN_FRAME_TRANS_H
-#include "public_typedef.h"
 #include <iostream>
+#include "public_typedef.h"
 
 struct CanFrameSt {
     UINT32 protType;// 协议类型
@@ -22,12 +22,12 @@ public:
     ~CanFrameTrans();
     VOID TransFrame(SINT32 argc, CHAR *argv[]);
 private:
-    VOID   InitStr(SINT32 argc, CHAR *argv[]);
-    VOID   GetFrameSt(CanFrameSt &canFrameSt, std::string &str);
-    VOID   PrintCanFrameSt(CanFrameSt camFrameSt);
-    UINT32 String2U32(std::string &str, DataRange range);
-    VOID GetSendBinStr();
-    VOID PrintCanFrame(std::string str);
+    BOOLEAN InitStr(SINT32 argc, CHAR *argv[]);
+    VOID    GetFrameSt(CanFrameSt &canFrameSt, std::string &str);
+    VOID    PrintCanFrameSt(CanFrameSt camFrameSt);
+    UINT32  String2U32(std::string &str, DataRange range);
+    VOID    GetSendBinStr();
+    VOID    PrintCanFrame(std::string str);
 
     std::string recvBinStr = "";
     std::string sendBinStr = std::string(32, '0');

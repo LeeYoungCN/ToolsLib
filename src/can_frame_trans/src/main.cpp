@@ -1,9 +1,12 @@
 #include <iostream>
+#include "can_frame_trans.h"
+#include "public_typedef.h"
 
 using namespace std;
 
-int main()
+SINT32 main(SINT32 argc, CHAR *argv[])
 {
-    cout << "Hello World!" << endl;
+    CanFrameTrans f;
+    f.TransFrame(argc, argv);
     return 0;
 }

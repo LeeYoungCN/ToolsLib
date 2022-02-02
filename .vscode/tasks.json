@@ -23,7 +23,7 @@
             },
             "command": "./build.sh",
             "args": [
-                "FileListTrans"
+                "CanFrame"
             ],
             "detail": "使用cmake命令创建makefile,并生成可执行文件",
             "problemMatcher": [

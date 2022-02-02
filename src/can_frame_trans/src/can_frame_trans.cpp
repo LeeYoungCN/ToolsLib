@@ -14,9 +14,9 @@ struct FrameStruct {
 };
 
 const FrameStruct FRAME_ST = {
-    {25,    31},    // protTypeRange
-    {17,    24},    // dstAddrRange
-    {9,     16},    // srcAddrRange
+    {23,    28},    // protTypeRange
+    {16,    22},    // dstAddrRange
+    {9,     15},    // srcAddrRange
     {8,     8},     // QR_FlagRange
     {0,     5}      // CmdCodeRange
 };
@@ -40,13 +40,16 @@ unordered_map<char, string> CHAR_TO_STR = {
     {'F', "1111"},
 };
 
+const UINT64 INPUT_LEN = 8;
 
 CanFrameTrans::CanFrameTrans() {};
 CanFrameTrans::~CanFrameTrans() {};
 
 VOID CanFrameTrans::TransFrame(SINT32 argc, CHAR *argv[])
 {
-    InitStr(argc, argv);
+    if (!InitStr(argc, argv)) {
+        return;
+    }
     GetFrameSt(recvFrameSt, recvBinStr);
     cout << endl << "recv can frame" << endl << endl;
     PrintCanFrameSt(recvFrameSt);
@@ -59,16 +62,27 @@ VOID CanFrameTrans::TransFrame(SINT32 argc, CHAR *argv[])
     PrintCanFrame(sendBinStr);
 }
 
-VOID CanFrameTrans::InitStr(SINT32 argc, CHAR *argv[])
+BOOLEAN CanFrameTrans::InitStr(SINT32 argc, CHAR *argv[])
 {
+    if (argc == 1) {
+        cout << "no input!" << endl;
+        return BOOLEAN::FALSE;
+    }
+    UINT64 cnt = 0;
     for (SINT32 i = 1; i < argc; i++) {
         for (SINT32 j = 0; argv[i][j] != '\0'; j++) {
             CHAR c = argv[i][j];
             recvBinStr += CHAR_TO_STR[c];
+            cnt++;
         }
+    }
+    if (cnt != INPUT_LEN) {
+        cout << "input len != " << INPUT_LEN << endl;
+        return BOOLEAN::FALSE;
     }
     reverse(recvBinStr.begin(), recvBinStr.end());
     sendBinStr = recvBinStr;
+    return BOOLEAN::TRUE;
 }
 
 VOID CanFrameTrans::GetFrameSt(CanFrameSt &canFrameSt, string &str)
