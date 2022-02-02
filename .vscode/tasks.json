@@ -19,7 +19,7 @@
         {
             "label": "Config & Build",
             "options": {
-                "cwd": "${workspaceFolder}/build/"
+                "cwd": "${workspaceFolder}/script/"
             },
             "command": "./build.sh",
             "args": [
@@ -68,7 +68,7 @@
         {
             "label": "Download Platform",
             "options": {
-                "cwd": "${workspaceFolder}/Platform/template/"
+                "cwd": "${workspaceFolder}/"
             },
             "command": "./download_Platform.sh",
             "args": [],

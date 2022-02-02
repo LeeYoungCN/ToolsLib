@@ -59,12 +59,13 @@ git_clone_repository "git@github.com:LeeYoungCN/Platform.git"
 root=$(pwd)
 platform_path=$(cd Platform;pwd)
 template_path="${platform_path}/template"
-cd ${platform_path}/build
-./init_env.sh
-cd ${root}
 
 if [ ! -d ${root}/.vscode ]; then
     mkdir -p ${root}/.vscode
 fi
 
 copy_all_file ${template_path}
+
+cd ${platform_path}/build
+./init_env.sh
+cd ${root}
