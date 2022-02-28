@@ -36,7 +36,7 @@ function build_input_target()
     fi
 }
 
-pushd ./../Platform/build >> /dev/null
+pushd ./../Platform/script >> /dev/null
 
 if [ $# -eq 0 ]; then
     build_all

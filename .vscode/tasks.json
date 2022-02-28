@@ -22,9 +22,7 @@
                 "cwd": "${workspaceFolder}/script/"
             },
             "command": "./build.sh",
-            "args": [
-                "CanFrame"
-            ],
+            "args": [],
             "detail": "使用cmake命令创建makefile,并生成可执行文件",
             "problemMatcher": [
                 "$gcc"
