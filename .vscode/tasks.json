@@ -8,7 +8,7 @@
         {
             "label": "Clean",
             "options": {
-                "cwd": "${workspaceFolder}/Platform/build/"
+                "cwd": "${workspaceFolder}/Platform/script/"
             },
             "command": "./cmake_clean.sh",
             "detail": "清除CMake生成文件",
@@ -33,7 +33,7 @@
         {
             "label": "Build",
             "options": {
-                "cwd": "${workspaceFolder}/Platform/build/"
+                "cwd": "${workspaceFolder}/Platform/script/"
             },
             "command": "./cmake_build.sh",
             "detail": "根据makefile生成可执行文件和库文件",
@@ -44,7 +44,7 @@
         {
             "label": "Run",
             "options": {
-                "cwd": "${workspaceFolder}/Platform/build/"
+                "cwd": "${workspaceFolder}/Platform/script/"
             },
             "command": "./cmake_run.sh",
             "args": [],
@@ -56,7 +56,7 @@
         {
             "label": "Init Env",
             "options": {
-                "cwd": "${workspaceFolder}/Platform/build/"
+                "cwd": "${workspaceFolder}/Platform/script/"
             },
             "command": "./init_env.sh",
             "args": ["${workspaceFolder}"],
@@ -68,7 +68,7 @@
         {
             "label": "Download Platform",
             "options": {
-                "cwd": "${workspaceFolder}/"
+                "cwd": "${workspaceFolder}/script"
             },
             "command": "./download_Platform.sh",
             "args": [],
