@@ -3,6 +3,4 @@
 
 SINT32 main(SINT32 argc, CHAR *argv[])
 {
-    std::cout << "Hello World" << std::endl;
-    return 0;
 }

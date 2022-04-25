@@ -1,11 +1,2 @@
-1、运行cmake_cfg_build.sh + 工具名称 创建工具可执行文件
-2、init_env 修改CMakeList.txt 文件
+1. 命令行工具
 
-
-输入target_name
-刷新环境变量
-编译
-
-如果无输入, target_name == default
-
-存在多个输入, 则编译多个

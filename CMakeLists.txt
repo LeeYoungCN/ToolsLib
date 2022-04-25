@@ -12,10 +12,8 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_FLAGS   "-Wall -g")
 set(CMAKE_CXX_FLAGS "-Wall -g")
 include_directories(${PLATFORM_PATH}/inc/public_func)
-add_executable(${TARGET_NAME})
 add_subdirectory(${CODE_PATH})
-
 
 file(GLOB PUBLIC_LIBS ${PLATFORM_PATH}/lib/*.a)
 
-target_link_libraries(${TARGET_NAME} ${PUBLIC_LIBS} pthread)
+link_libraries({PUBLIC_LIBS} pthread)

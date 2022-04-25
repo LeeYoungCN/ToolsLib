@@ -1,4 +1,11 @@
-aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src CODE_SRCS)
-target_include_directories(${TARGET_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/inc)
+set(EXE_NAME can_frame_tran)
+set(LIB_NAME can_frame_trans_lib)
 
-target_sources(${TARGET_NAME} PRIVATE ${CODE_SRCS})
+add_library(${LIB_NAME})
+add_executable(${EXE_NAME})
+
+add_subdirectory(src)
+add_subdirectory(main)
+
+target_link_libraries(${EXE_NAME} ${LIB_NAME})
+target_link_libraries(${LIB_NAME} ${PUBLIC_LIBS} pthread)
